@@ -8,7 +8,7 @@
   "explorer.confirmPasteNative": false,
 
   "window.title": "${rootNameShort}",
-  "window.menuBarVisibility": "toggle",
+  "window.menuBarVisibility": "hidden",
   "window.commandCenter": false,
   "window.zoomLevel": 0.15,
 
@@ -174,7 +174,7 @@
 
   /** -------- Terminal -------- */
   "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeight": "400",
   "terminal.integrated.fontFamily": "Maple Mono NF Regular",
@@ -187,7 +187,6 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "diffEditor.ignoreTrimWhitespace": true,
 
   /** -------- Vim -------- */
   "vim.foldfix": true,
@@ -281,6 +280,5 @@
     "*.css": "$(capture).css.map, $(capture).*.css",
     "*.mjs": "$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs"
   },
-
   "cursor.cpp.enablePartialAccepts": true,
 }

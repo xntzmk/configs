@@ -119,7 +119,7 @@
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus",
     "args": {
-      "snippet": "// #region [$1] \n$TM_SELECTED_TEXT$0\n// #endregion [$1]"
+      "snippet": "// #region [$1] \n$TM_SELECTED_TEXT$0\n// #endregion"
     }
   },
 
@@ -173,7 +173,7 @@
   { "key": "ctrl+t", "command": "-workbench.action.openSettings" },
   { "key": "ctrl+n", "command": "-workbench.action.files.newUntitledFile" },
   { "key": "ctrl+w", "command": "-expand_region" },
-  { "key": "ctrl+c", "command": "-extension.vim_ctrl+c" },
+  { "key": "ctrl+c", "command": "-extension.vim_ctrl+c", },
   { "key": "ctrl+[", "command": "-editor.action.outdentLines" },
   { "key": "ctrl+]", "command": "-editor.action.indentLines" },
   {
@@ -181,6 +181,9 @@
     "command": "workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled"
   },
-  { "key": "f2", "command": "-abracadabra.renameSymbol" }
+  {
+    "key": "f2",
+    "command": "-abracadabra.renameSymbol"
+  },
   // #endregion [禁用设置]
 ]

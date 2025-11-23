@@ -16,12 +16,12 @@
   },
 
   "deconstruct object": {
-    "prefix": "cj",
+    "prefix": "do",
     "body": ["const {${2:key}} = ${1:obj}"],
   },
 
   "deconstruct array": {
-    "prefix": "cy",
+    "prefix": "da",
     "body": ["const {${2:first}} = ${1:array}"],
   },
 
@@ -44,7 +44,7 @@
   /** Func, Export */
   "base function": {
     "prefix": "f",
-    "body": ["($1) => {$2}"],
+    "body": ["() => ${1:}"],
   },
 
   "function": {
@@ -71,6 +71,13 @@
     "prefix": "ex",
     "body": [
       "export {$2} from '$1'"
+    ],
+  },
+
+  "import from": {
+    "prefix": "imp",
+    "body": [
+      "import {$2} from '$1'"
     ],
   },
 
@@ -143,5 +150,5 @@
   "vue-defineOptions": {
     "prefix": "dname",
     "body": ["defineOptions({ name: '${1:$TM_FILENAME_BASE}' })"]
-  }
+  },
 }
