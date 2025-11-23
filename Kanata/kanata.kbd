@@ -1,0 +1,82 @@
+;; -----------------------------------------------------------------------------
+;; 必须的配置条目 defcfg
+;; -----------------------------------------------------------------------------
+
+(defcfg
+    process-unmapped-keys yes
+    sequence-timeout 2000
+    windows-altgr add-lctl-release
+)
+
+;; -------------------------------------------------------------------------------------------------
+;; 配置文件必须只有一个 defsrc 条目
+;; 1. defsrc 条目由 defsrc 和键名组成, 键名之间用空格分隔
+;; 2. defsrc 条目被视为一个长序列, 空格 (空格, 制表符, 换行符) 的数量是不相关的, 您可以使用空格, 制表符或换行符来分
+;;    隔键名和键值
+;; -------------------------------------------------------------------------------------------------
+
+(defsrc
+    1    2    3    4    5    6    7    8    9    0    -    = 
+    q    w    e    r    t    y    u    i    o    p    [    ] 
+    a    s    d    f    g    h    j    k    l    ;    '
+    z    x    c    v    b    n    m    ,    .    /  
+    lctrl spc          
+)
+
+;; -------------------------------------------------------------------------------------------------
+;; defalias
+;; -------------------------------------------------------------------------------------------------
+(defalias
+  ;; v1.8.1 中正确的滚轮动作。按住即可重复滚动。
+  ;; 第一个数字是间隔(ms)，越小滚得越快。第二个是距离。
+  screen_up (mwheel-up 30 120)
+  screen_down (mwheel-down 30 120)
+  space_fn (tap-hold-press 200 200 spc (layer-while-held space_layer))
+
+  ;; 单击 caps 映射成 esc, 按下 caps 不释放映射成 lctl
+  ;; tab-hold 后的第二个参数表示按下后必须保持 xxx 毫秒以上, caps 才会作为 lctl 键
+  ;; tap-hold-press
+  ;;     如果按下不同的键, 即使现在 caps 还不是作为 lctl, 此时也会作为 lctl 键, 和
+  ;;     tap-hold-release 不同的是, 当 c 键按下去时, lctrl+c 就发挥作用了
+  ;; tap-hold-release 比如说 caps 要按下保持 1s 中才会被当作 lctl 使用, 但是如果单击了其他键如 c, 只有等待 c 释放后, lctrl+c 就发挥作用了
+  myCtrl (tap-hold-press 100 120 esc lctl)
+)
+
+
+(defalias
+    ;; Unicode 区
+    ens1 (unicode !) ens2 (unicode @) ens3 (unicode #) ens4 (unicode $) ens5 (unicode %)
+    ens6 (unicode ^) ens7 (unicode &) ens8 (unicode *) ens9(unicode r#"("#) ens10(unicode r#")"#)
+    ens11 (unicode [) ens12 (unicode ]) ens13 (unicode \) ens14 (unicode ;) ens15 (unicode ')
+    ens16 (unicode ,) ens17 (unicode .) ens18 (unicode _) ens19 (unicode +) ens20 (unicode `)
+    ens21 (unicode /)
+)
+
+
+(defalias
+    ;; Shift Unicode 区
+    s_ens1 (unicode _) s_ens2 (unicode +) s_ens3 (unicode {) s_ens4 (unicode })
+    s_ens5 (unicode |) s_ens6 (unicode :) s_ens7 (unicode r#"""#) s_ens8 (unicode <)
+    s_ens9 (unicode >) s_ens10 (unicode ?)
+)
+
+
+;; -------------------------------------------------------------------------------------------------
+;; 配置文件必须至少有一个 deflayer 条目, 这定义了当 kanata 运行时, desrc 中映射的每个物理键的行为
+;; 1. deflayer 中的键 / 动作的顺序对应于 defsrc 中定义的相同序列位置中的物理键
+;; -------------------------------------------------------------------------------------------------
+(deflayer start
+	1       2         3    4    5    6    7    8    9    0    -    =   
+	q       w         e    r    t    y    u    i    o    p    [    ]  
+	a       s         d    f    g    h    j    k    l    bspc    '   
+	z       x         c    v    b    n    m    ,    .    / 
+  @myCtrl @space_fn
+)
+
+(deflayer space_layer
+	f1    f2     f3   f4   f5   f6    f7      f8     f9     f10    f11   f12 
+  q     w    e    r    t    y    u    home    end    p    [    ]   
+	a     spc      d    f    g    left    down   up    right  @s_ens6  '    
+  C-z    x    C-c    C-v    b    n    m    ,    .    /  
+	@myCtrl spc
+)
