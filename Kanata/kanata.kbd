@@ -20,7 +20,7 @@
     q    w    e    r    t    y    u    i    o    p    [    ] 
     a    s    d    f    g    h    j    k    l    ;    '
     z    x    c    v    b    n    m    ,    .    /  
-    lctrl spc          
+    spc          
 )
 
 ;; -------------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@
   ;;     如果按下不同的键, 即使现在 caps 还不是作为 lctl, 此时也会作为 lctl 键, 和
   ;;     tap-hold-release 不同的是, 当 c 键按下去时, lctrl+c 就发挥作用了
   ;; tap-hold-release 比如说 caps 要按下保持 1s 中才会被当作 lctl 使用, 但是如果单击了其他键如 c, 只有等待 c 释放后, lctrl+c 就发挥作用了
-  myCtrl (tap-hold-press 100 120 esc lctl)
+  ;; myCtrl (tap-hold-press 100 120 esc lctl)
 )
 
 
@@ -68,15 +68,15 @@
 (deflayer start
 	1       2         3    4    5    6    7    8    9    0    -    =   
 	q       w         e    r    t    y    u    i    o    p    [    ]  
-	a       s         d    f    g    h    j    k    l    bspc    '   
+	a       s         d    f    g    h    j    k    l    ;    '   
 	z       x         c    v    b    n    m    ,    .    / 
-  @myCtrl @space_fn
+  @space_fn
 )
 
 (deflayer space_layer
 	f1    f2     f3   f4   f5   f6    f7      f8     f9     f10    f11   f12 
   q     w    e    r    t    y    u    home    end    p    [    ]   
-	a     spc      d    f    g    left    down   up    right  @s_ens6  '    
+	C-a    spc   d    f    g    left    down   up    right  bspc  '    
   C-z    x    C-c    C-v    b    n    m    ,    .    /  
-	@myCtrl spc
+  spc
 )

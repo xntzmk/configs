@@ -8,8 +8,8 @@
   },
 
   // 关闭标签
-  { "key": "ctrl+shift+o", "command": "workbench.action.closeOtherEditors" },
-  { "key": "ctrl+shift+l", "command": "workbench.action.closeEditorsToTheRight" },
+  { "key": "alt+o", "command": "workbench.action.closeOtherEditors" },
+  { "key": "alt+l", "command": "workbench.action.closeEditorsToTheRight" },
 
   // 快速修复
   {
