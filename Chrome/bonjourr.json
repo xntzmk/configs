@@ -1,0 +1,205 @@
+{
+  "about": {
+    "browser": "chrome",
+    "version": "21.2.1"
+  },
+  "showall": true,
+  "lang": "zh-CN",
+  "dark": "system",
+  "favicon": "⚡️",
+  "tabtitle": "",
+  "greeting": "",
+  "greetingsize": "3",
+  "pagegap": 10,
+  "pagewidth": 1600,
+  "time": false,
+  "main": false,
+  "dateformat": "auto",
+  "quicklinks": true,
+  "textShadow": 0.2,
+  "announcements": "major",
+  "review": -1,
+  "css": "",
+  "hide": {
+    "greetings": false,
+    "settingsicon": false
+  },
+  "linkstyle": "medium",
+  "linktitles": true,
+  "linkbackgrounds": true,
+  "linknewtab": false,
+  "linksrow": 5,
+  "linkgroups": {
+    "on": true,
+    "selected": "default",
+    "groups": [
+      "default"
+    ],
+    "pinned": [],
+    "synced": []
+  },
+  "backgrounds": {
+    "type": "files",
+    "fadein": 300,
+    "blur": 3,
+    "bright": 0.94,
+    "frequency": "pause",
+    "color": "#185A63",
+    "urls": "",
+    "images": "bonjourr-images-daylight",
+    "videos": "bonjourr-videos-daylight",
+    "queries": {},
+    "texture": {
+      "type": "none"
+    }
+  },
+  "clock": {
+    "size": 1,
+    "ampm": false,
+    "analog": false,
+    "seconds": false,
+    "ampmlabel": false,
+    "worldclocks": false,
+    "timezone": "auto"
+  },
+  "worldclocks": [],
+  "analogstyle": {
+    "face": "none",
+    "hands": "modern",
+    "shape": "round",
+    "border": "#ffff",
+    "background": "#fff2"
+  },
+  "weather": {
+    "city": "islands-district",
+    "unit": "metric",
+    "provider": "",
+    "moreinfo": "none",
+    "forecast": "auto",
+    "temperature": "actual",
+    "geolocation": "approximate"
+  },
+  "notes": {
+    "on": false,
+    "width": 40,
+    "opacity": 0.1,
+    "align": "left"
+  },
+  "searchbar": {
+    "on": false,
+    "opacity": 0.1,
+    "newtab": false,
+    "suggestions": true,
+    "engine": "default",
+    "request": "",
+    "placeholder": ""
+  },
+  "quotes": {
+    "on": false,
+    "type": "classic",
+    "frequency": "day",
+    "author": false,
+    "last": 1764071389768
+  },
+  "font": {
+    "size": "14",
+    "family": "Maple Hand",
+    "system": true,
+    "weightlist": [
+      "300",
+      "400",
+      "600",
+      "700",
+      "800"
+    ],
+    "weight": "400"
+  },
+  "supporters": {
+    "enabled": false,
+    "closed": true,
+    "month": 8
+  },
+  "move": {
+    "selection": "single",
+    "layouts": {
+      "single": {
+        "grid": [
+          [
+            "quicklinks"
+          ]
+        ],
+        "items": {}
+      }
+    }
+  },
+  "linkscioaij": {
+    "_id": "linkscioaij",
+    "order": 4,
+    "parent": "default",
+    "title": "南+",
+    "url": "https://bbs.imoutolove.me/index.php"
+  },
+  "linkshifeji": {
+    "_id": "linkshifeji",
+    "order": 3,
+    "parent": "default",
+    "title": "其乐",
+    "url": "https://keylol.com/forum.php"
+  },
+  "linkshpopqc": {
+    "_id": "linkshpopqc",
+    "order": 2,
+    "parent": "default",
+    "title": "百度贴吧",
+    "url": "https://tieba.baidu.com/"
+  },
+  "linksjfigqo": {
+    "_id": "linksjfigqo",
+    "order": 0,
+    "parent": "default",
+    "title": "Steam",
+    "url": "https://store.steampowered.com/"
+  },
+  "linksmccbql": {
+    "_id": "linksmccbql",
+    "order": 6,
+    "parent": "default",
+    "title": "Linux Do",
+    "url": "https://linux.do/"
+  },
+  "linksninaoe": {
+    "_id": "linksninaoe",
+    "order": 1,
+    "parent": "default",
+    "title": "哔哩哔哩",
+    "url": "https://www.bilibili.com/"
+  },
+  "linksnlhlgp": {
+    "_id": "linksnlhlgp",
+    "order": 7,
+    "parent": "default",
+    "title": "V2EX",
+    "url": "https://www.v2ex.com/"
+  },
+  "linksogiagd": {
+    "_id": "linksogiagd",
+    "order": 9,
+    "parent": "default",
+    "title": "豆包",
+    "url": "https://www.doubao.com/"
+  },
+  "linksrcdbpo": {
+    "_id": "linksrcdbpo",
+    "order": 5,
+    "parent": "default",
+    "title": "小众软件",
+    "url": "https://meta.appinn.net/latest"
+  },
+  "linksrjoiqn": {
+    "_id": "linksrjoiqn",
+    "order": 8,
+    "parent": "default",
+    "title": "X",
+    "url": "https://x.com/i/flow/login?redirect_after_login=%2Fhome"
+  }
+}
