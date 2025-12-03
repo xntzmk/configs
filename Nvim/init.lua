@@ -59,7 +59,6 @@ vim.keymap.set({ "n", "x", "i" }, "<C-d>", function()
   vscode.action("editor.action.addSelectionToNextFindMatch")
 end)
 
--- 从VSCode Vim配置转换的normal模式映射
 keymap("n", "<leader>s", function() -- save and format
   vscode.action("editor.action.formatDocument")
   vscode.action("workbench.action.files.save")
