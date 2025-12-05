@@ -93,7 +93,7 @@ end
 -- vim.opt.foldmethod = "indent"
 -- vim.opt.foldexpr = ""
 -- vim.opt.foldenable = true
--- vim.opt.foldlevel = 99
+vim.opt.foldlevel = 99
 -- vim.opt.foldlevelstart = 99
 
 keymap({'n', 'o'}, 'H', '^', { noremap = true, silent = true })
