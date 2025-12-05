@@ -75,14 +75,26 @@ end, opts)
 keymap("n", "<leader>e", function()
   vscode.action("workbench.view.explorer")
 end, opts)
+
+local function map(mode, lhs, rhs)
+  vim.keymap.set(mode, lhs, function() vscode.call(rhs) end, { silent = true, noremap = true })
 end
 
+-- Remap folding keys
+map('n', 'zM', 'editor.foldAll')
+map('n', 'zR', 'editor.unfoldAll')
+map('n', 'zc', 'editor.fold')
+map('n', 'zC', 'editor.foldRecursively')
+map('n', 'zo', 'editor.unfold')
+map('n', 'zO', 'editor.unfoldRecursively')
+map('n', 'za', 'editor.toggleFold')
+end
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = ""
-vim.opt.foldenable = true
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
+-- vim.opt.foldmethod = "indent"
+-- vim.opt.foldexpr = ""
+-- vim.opt.foldenable = true
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldlevelstart = 99
 
 keymap({'n', 'o'}, 'H', '^', { noremap = true, silent = true })
 keymap({'n', 'o'}, 'L', 'g_', { noremap = true, silent = true })
