@@ -18,15 +18,22 @@ vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
 
-
 -- Keymap
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- Leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+keymap("n", "<Space>", "", opts)
+keymap('n', '<Leader>v', '<C-v>', { desc = 'Visual Block Mode' })
+keymap("n", "<leader>p", "viwpgy", opts)
+-- endregion
+
+
 -- region Keybinding
 keymap("n", "n", "nzz", opts) 
 keymap("n", "N", "Nzz", opts)
-keymap("n", "<leader>p", "viwpgy", opts)
 keymap("n", "cp", "yyp", opts)
 
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
@@ -39,13 +46,6 @@ keymap("v", ">", ">gv", opts) -- 缩进后保持选择
 
 keymap({'n','x'}, 'gu', 'viwgu', { desc = 'Lowercase Word' }) -- 小写当前单词
 keymap({'n','x'}, 'gU', 'viwgU', { desc = 'Uppercase Word' }) -- 大写当前单词
--- endregion
-
--- region Leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-keymap("n", "<Space>", "", opts)
-keymap('n', '<Leader>v', '<C-v>', { desc = 'Visual Block Mode' })
 -- endregion
 
 
@@ -71,8 +71,11 @@ end, opts)
 keymap("n", "<leader>b", function() -- toggle boolean
   vscode.action("extension.toggleBool")
 end, opts)
-end
 
+keymap("n", "<leader>e", function()
+  vscode.action("workbench.view.explorer")
+end, opts)
+end
 
 
 vim.opt.foldmethod = "expr"

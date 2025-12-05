@@ -1,4 +1,15 @@
 [
+  /** -------- Base -------- */
+  // 强覆盖一次 ctrl + w
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor",
+  },
+
+  // 关闭标签
+  { "key": "alt+,", "command": "workbench.action.closeOtherEditors" },
+  { "key": "alt+.", "command": "workbench.action.closeEditorsToTheRight" },
+
   // 拆分
   { "key": "ctrl+t", "command": "workbench.action.splitEditor" },
   {
@@ -7,11 +18,11 @@
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
 
-  // 关闭标签
-  { "key": "alt+o", "command": "workbench.action.closeOtherEditors" },
-  { "key": "alt+l", "command": "workbench.action.closeEditorsToTheRight" },
+  // tab 切换
+  { "key": "ctrl+,", "command": "workbench.action.previousEditor" },
+  { "key": "ctrl+.", "command": "workbench.action.nextEditor" },
 
-  // 快速修复
+  // 快速修复 
   {
     "key": "ctrl+u",
     "command": "editor.action.quickFix",
@@ -19,15 +30,11 @@
   },
 
   // 查找当前文件问题
-  { "key": "alt+8", "command": "editor.action.marker.prev" },
-  { "key": "alt+9", "command": "editor.action.marker.next" },
+  // { "key": "alt+8", "command": "editor.action.marker.prev" },
+  // { "key": "alt+9", "command": "editor.action.marker.next" },
+  { "key": "alt+9", "command": "go-to-next-error.nextInFiles.error" },
+  { "key": "alt+8", "command": "go-to-next-error.prevInFiles.error" },
 
-  // 查找匹配项
-  {
-    "key": "ctrl+n",
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
-  },
 
   // 查找搜索结果
   {
@@ -41,52 +48,8 @@
     "when": "hasSearchResult || inSearchEditor"
   },
 
-  /** -------- 文件树 -------- */
-  {
-    "command": "explorer.newFile",
-    "key": "a",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "explorer.newFolder",
-    "key": "shift+a",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "deleteFile",
-    "key": "d",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "renameFile",
-    "key": "r",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.cut",
-    "key": "x",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.copy",
-    "key": "y",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.paste",
-    "key": "p",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
 
-  /** -------- Workbench -------- */
-
-  // tab 切换
-  { "key": "ctrl+,", "command": "workbench.action.previousEditor" },
-  { "key": "ctrl+.", "command": "workbench.action.nextEditor" },
-
-  /** -------- Terminal -------- */
-
-  // tab 切换
+  /** -------- 终端 -------- */
   {
     "key": "ctrl+,",
     "command": "workbench.action.terminal.focusPreviousPane",
@@ -98,92 +61,34 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
-  // 关闭终端
   {
     "key": "ctrl+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
 
-  // 聚焦终端
   {
     "key": "ctrl+;",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
-
   },
 
-  // 区域注释
-  {
-    "key": "ctrl+b",
-    "command": "editor.action.insertSnippet",
-    "when": "editorTextFocus",
-    "args": {
-      "snippet": "// #region [$1] \n$TM_SELECTED_TEXT$0\n// #endregion"
-    }
-  },
 
   /** -------- 扩展 -------- */
   {
     "key": "ctrl+\\",
-    "command": "markdown.showPreviewToSide",
-    "when": "editorLangId == 'markdown' && !activeEditorIsPreview"
-  },
-  {
-    "key": "ctrl+\\",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "editorLangId == 'markdown' && activeEditorIsPreview"
+    "command": "markdown-preview-enhanced.openPreviewToTheSide",
+    "when": "editorFocus && editorLangId == 'markdown'"
   },
 
-  {
-    "key": "enter",
-    "command": "expand_region",
-    "when": "editorTextFocus && (vim.mode == 'Normal' || vim.mode == 'Visual') && !suggestWidgetVisible"
-  },
-  {
-    "key": "backspace",
-    "command": "undo_expand_region",
-    "when": "editorTextFocus && editorHasSelection && vim.mode == 'Visual'"
-  },
-
-  // #region [VIM] 
-  {
-    "key": "ctrl+o",
-    "command": "extension.vim_ctrl+o",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "extension.vim_ctrl+i",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "vim.remap",
-    "when": "editorTextFocus &&  vim.active && vim.mode == 'Normal'",
-    "args": {
-      "after": [ "g", "d" ]
-    }
-  },
-  // #endregion [VIM]
-
-
-  // #region [禁用设置] 
+  /** -------- 禁用默认设置 -------- */
   { "key": "ctrl+j", "command": "-workbench.action.togglePanel" },
   { "key": "ctrl+t", "command": "-workbench.action.openSettings" },
-  { "key": "ctrl+n", "command": "-workbench.action.files.newUntitledFile" },
   { "key": "ctrl+w", "command": "-expand_region" },
-  { "key": "ctrl+c", "command": "-extension.vim_ctrl+c", },
-  { "key": "ctrl+[", "command": "-editor.action.outdentLines" },
-  { "key": "ctrl+]", "command": "-editor.action.indentLines" },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "f2",
-    "command": "-abracadabra.renameSymbol"
-  },
-  // #endregion [禁用设置]
+  { "key": "f2", "command": "-abracadabra.renameSymbol" },
+  // {
+  //   "key": "tab",
+  //   "command": "-vscode-neovim.send",
+  //   "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  // },
 ]
