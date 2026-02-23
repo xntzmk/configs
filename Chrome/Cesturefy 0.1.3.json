@@ -1,0 +1,180 @@
+{
+  "Gestures": [
+    {
+      "command": {
+        "name": "RestoreTab",
+        "settings": {
+          "currentWindowOnly": false
+        }
+      },
+      "pattern": [
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "NewTab",
+        "settings": {
+          "focus": true,
+          "position": "default"
+        }
+      },
+      "pattern": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "CloseTab",
+        "settings": {
+          "closePinned": false,
+          "nextFocus": "default"
+        }
+      },
+      "pattern": [
+        [
+          -0.6666259765625,
+          274.66668701171875
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "CloseOtherTabs",
+        "settings": {}
+      },
+      "pattern": [
+        [
+          0,
+          220.66668701171875
+        ],
+        [
+          -38,
+          15.33331298828125
+        ],
+        [
+          -260.66668701171875,
+          2
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "CloseRightTabs",
+        "settings": {}
+      },
+      "pattern": [
+        [
+          8,
+          218.66668701171875
+        ],
+        [
+          22,
+          24
+        ],
+        [
+          56,
+          13.33331298828125
+        ],
+        [
+          189.3333740234375,
+          -0.66668701171875
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "OpenURLFromClipboardInNewTab",
+        "settings": {
+          "focus": true,
+          "position": "after"
+        }
+      },
+      "pattern": [
+        [
+          203.3333740234375,
+          -6.66668701171875
+        ],
+        [
+          18,
+          -48.66668701171875
+        ],
+        [
+          -0.6666259765625,
+          -186.6666259765625
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "ScrollBottom",
+        "settings": {
+          "behavior": "before",
+          "duration": 50
+        }
+      },
+      "pattern": [
+        [
+          226.6666259765625,
+          -1.33331298828125
+        ],
+        [
+          7.3333740234375,
+          7.33331298828125
+        ],
+        [
+          -2,
+          202
+        ]
+      ]
+    },
+    {
+      "command": {
+        "name": "ScrollTop",
+        "settings": {
+          "behavior": "before",
+          "duration": 50
+        }
+      },
+      "pattern": [
+        [
+          1.3333740234375,
+          -320.66668701171875
+        ]
+      ]
+    }
+  ],
+  "Settings": {
+    "Gesture": {
+      "Command": {
+        "Style": {
+          "fontSize": "24px"
+        }
+      }
+    },
+    "Wheel": {
+      "active": true,
+      "mouseButton": 2,
+      "wheelDown": {
+        "name": "FocusRightTab",
+        "settings": {
+          "cycling": true,
+          "excludeDiscarded": false
+        }
+      },
+      "wheelUp": {
+        "name": "FocusLeftTab",
+        "settings": {
+          "cycling": true,
+          "excludeDiscarded": false
+        }
+      }
+    }
+  }
+}
