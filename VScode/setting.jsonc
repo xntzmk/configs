@@ -11,14 +11,15 @@
   "window.menuBarVisibility": "hidden",
   "window.commandCenter": false,
   "window.zoomLevel": 0.15,
-
   /** -------- Workbench -------- */
+  "workbench.activityBar.orientation": "vertical",
   "workbench.tree.indent": 15,
   "workbench.list.smoothScrolling": true,
-  "workbench.activityBar.orientation": "vertical",
+  "workbench.editor.wrapTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 9,
   "workbench.editor.limit.perEditorGroup": true,
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.tabActionCloseVisibility": false,
 
@@ -28,8 +29,8 @@
   "workbench.colorCustomizations": {
     "[GitHub Plus]": {
       "sideBar.background": "#fdfdfe",
-      "list.activeSelectionBackground": "#2590d880",
       "editor.background": "#fdfdfe",
+      "list.activeSelectionBackground": "#2590d880",
       "editorBracketHighlight.foreground1": "#92dfd2",
       "editorBracketHighlight.foreground2": "#86cdfc",
       "editorBracketHighlight.foreground3": "#ebba60",
@@ -39,17 +40,18 @@
 
   /** -------- Editor -------- */
   "editor.tabSize": 2,
-  "editor.fontSize": 13.3,
+  "editor.fontSize": 13,
   "editor.fontWeight": "400",
   "editor.lineNumbers": "relative",
   "editor.fontFamily": "MonoLisa, Maple Hand, LXGW WenKai Mono",
   "editor.fontLigatures": false,
-  "editor.linkedEditing": false,
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
+  "editor.minimap.autohide": true,
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
+  "editor.renderWhitespace": "none",
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
+    "source.fixAll": "never",
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
@@ -63,11 +65,10 @@
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "blink",
   "editor.cursorSmoothCaretAnimation": "on",
-
-  "editor.snippetSuggestions": "inline",
   "editor.suggest.preview": false,
   "editor.suggestSelection": "first",
   "editor.suggest.insertMode": "insert",
+  "editor.snippetSuggestions": "inline",
   "editor.suggest.localityBonus": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -77,13 +78,18 @@
     "textMateRules": [
       {
         "name": "comment",
-        "scope": [ "comment.line.double-slash", "comment.block.documentation" ],
+        "scope": [
+          "comment.line.double-slash",
+          "comment.block.documentation"
+        ],
         "settings": {
           "fontStyle": "italic"
         }
       },
       {
-        "scope": [ "storage.type.function" ],
+        "scope": [
+          "storage.type.function"
+        ],
         "settings": {
           "fontStyle": "italic"
         }
@@ -92,13 +98,18 @@
     "[GitHub Plus]": {
       "textMateRules": [
         {
-          "scope": [ "storage.type.function" ],
+          "scope": [
+            "storage.type.function"
+          ],
           "settings": {
             "foreground": "#ff808b"
           }
         },
         {
-          "scope": [ "keyword.control.trycatch", "variable.language.this" ],
+          "scope": [
+            "keyword.control.trycatch",
+            "variable.language.this"
+          ],
           "settings": {
             "foreground": "#42a5f5"
           }
@@ -134,7 +145,9 @@
         },
         {
           "name": "JSDoc-Style comment parameters",
-          "scope": [ "comment.block.documentation variable" ],
+          "scope": [
+            "comment.block.documentation variable"
+          ],
           "settings": {
             "fontStyle": "italic",
             "foreground": "#3a99aa"
@@ -153,7 +166,6 @@
       ]
     }
   },
-
   "search.exclude": {
     "**/.git": true,
     "**/.github": true,
@@ -171,60 +183,19 @@
     "**/tmp": true,
     "**/yarn.lock": true
   },
-
-  /** -------- Terminal -------- */
   "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeight": "400",
-  "terminal.integrated.fontFamily": "Maple Mono NF Regular",
+  "terminal.integrated.fontFamily": "Maple Mono NF CN",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.splitCwd": "initial",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.persistentSessionReviveProcess": "never",
-
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-
-  /** -------- Vim -------- */
-  "vim.foldfix": true,
-  "vim.hlsearch": true,
-  "vim.leader": "<Space>",
-  "vim.useCtrlKeys": false,
-  "vim.useSystemClipboard": true,
-  "vim.operatorPendingModeKeyBindings": [
-    { "before": [ "H" ], "after": [ "^" ] },
-    { "before": [ "L" ], "after": [ "g", "_" ] }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": [ "H" ], "after": [ "^" ] },
-    { "before": [ "L" ], "after": [ "g", "_" ] },
-    { "before": [ "J" ], "after": [ "5", "j" ] },
-    { "before": [ "K" ], "after": [ "5", "k" ] },
-    { "before": [ "n" ], "after": [ "n", "z", "z" ] },
-    { "before": [ "N" ], "after": [ "N", "z", "z" ] },
-    { "before": [ "c", "p" ], "after": [ "y", "y", "p" ] },
-    { "before": [ "'", "'" ], "after": [ "v", "i", "w", "S", "'", "e", "l" ] },
-    { "before": [ "'", "\"" ], "after": [ "v", "i", "w", "S", "\"", "e", "l" ] },
-    { "before": [ "g", "u" ], "after": [ "v", "i", "w", "g", "u" ] },
-    { "before": [ "<leader>", "u" ], "after": [ "v", "i", "w", "g", "U" ] },
-    { "before": [ "<leader>", "s" ], "commands": [ "editor.action.formatDocument", "workbench.action.files.save" ] },
-    { "before": [ "<leader>", "w" ], "commands": [ "workbench.action.files.saveWithoutFormatting" ] },
-    { "before": [ "<leader>", "i" ], "commands": [ "extension.toggleBool" ] },
-    { "before": [ "<leader>", "p" ], "after": [ "v", "i", "w", "p", "g", "v", "y" ] },
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    { "before": [ "H" ], "after": [ "^" ] },
-    { "before": [ "L" ], "after": [ "g", "_" ] },
-    { "before": [ "J" ], "after": [ "5", "j" ] },
-    { "before": [ "K" ], "after": [ "5", "k" ] },
-    { "before": [ "y" ], "after": [ "y", "g", "v", "<esc>" ] },
-    { "before": [ "p" ], "after": [ "p", "g", "v", "y" ] },
-  ],
-
-  /** -------- Eslint -------- */
   "eslint.quiet": true,
   "eslint.useFlatConfig": false,
   "eslint.codeAction.showDocumentation": {
@@ -241,7 +212,6 @@
     "json",
     "jsonc"
   ],
-
   "[markdown]": {
     "editor.wordWrap": "off",
     "editor.formatOnSave": true,
@@ -252,21 +222,39 @@
     },
     "diffEditor.ignoreTrimWhitespace": false
   },
-  "editor.defaultFormatter": "yzhang.markdown-all-in-one",
   "markdown-preview-enhanced.codeBlockTheme": "vue.css",
-
-  /** -------- 扩展 -------- */
-  "errorLens.enabledDiagnosticLevels": [ "warning", "error" ],
-  "errorLens.excludeBySource": [ "cSpell", "eslint" ],
-
+  "errorLens.enabledDiagnosticLevels": [
+    "warning",
+    "error"
+  ],
+  "errorLens.excludeBySource": [
+    "cSpell",
+    "eslint"
+  ],
   "cSpell.language": "en,en-US",
   "cSpell.spellCheckOnlyWorkspaceFiles": true,
-  "cSpell.userWords": [ "xntzmk" ],
-
+  "cSpell.userWords": [
+    "xntzmk"
+  ],
   "vue.autoInsert.bracketSpacing": true,
   "vue.autoInsert.dotValue": true,
-  "vue.complete.casing.props": "autoCamel",
+  "vue.suggest.propNameCasing": "alwaysCamelCase",
 
+  "vscode-neovim.compositeKeys": { },
+  "vscode-neovim.ctrlKeysForNormalMode": [
+    "o",
+    "i"
+  ],
+  "vscode-neovim.ctrlKeysForInsertMode": [
+    "y"
+  ],
+  "vscode-neovim.neovimExecutablePaths.darwin": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+  "vscode-neovim.neovimViewportHeightExtend": 3,
+  "vscode-neovim.autoGeneratedDocumentSchemes": [
+    "git",
+    "output",
+    "debug"
+  ],
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
@@ -280,5 +268,8 @@
     "*.css": "$(capture).css.map, $(capture).*.css",
     "*.mjs": "$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs"
   },
-  "cursor.cpp.enablePartialAccepts": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "vueSwiftI18nPlus.useHashKeyOnly": true,
+  "vueSwiftI18nPlus.useCompactPathMode": true,
 }

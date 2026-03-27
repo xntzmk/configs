@@ -151,4 +151,13 @@
     "prefix": "dname",
     "body": ["defineOptions({ name: '${1:$TM_FILENAME_BASE}' })"]
   },
+
+  "ul": {
+    "prefix": "ul",
+    "body": [
+      "import { useLocale } from '@/hooks';",
+      "const t = useLocale('${TM_DIRECTORY/.*?(src|applet)[\\\\\\\\\\/]?|([\\\\\\\\\\/])/${2:+.}/g}${TM_DIRECTORY/.*?(src|applet)[\\\\\\\\\\/].+?$/./}${TM_FILENAME_BASE}');"
+    ],
+    "description": "useLocale"
+  },
 }

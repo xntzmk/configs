@@ -1,11 +1,14 @@
 [
-  /** -------- Base -------- */
+  /** -------- Common -------- */
   // 强覆盖一次 ctrl + w
   {
     "key": "ctrl+w",
     "command": "workbench.action.closeActiveEditor",
   },
-
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
   // 关闭标签
   { "key": "alt+,", "command": "workbench.action.closeOtherEditors" },
   { "key": "alt+.", "command": "workbench.action.closeEditorsToTheRight" },
@@ -18,61 +21,76 @@
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
 
-  // tab 切换
-  { "key": "ctrl+,", "command": "workbench.action.previousEditor" },
-  { "key": "ctrl+.", "command": "workbench.action.nextEditor" },
-
   // 快速修复 
   {
     "key": "ctrl+u",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
   },
+  {
+    "key": "k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inRefactorPicker && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inRefactorPicker && neovim.mode != 'cmdline'"
+  },
 
   // 查找当前文件问题
-  // { "key": "alt+8", "command": "editor.action.marker.prev" },
-  // { "key": "alt+9", "command": "editor.action.marker.next" },
-  { "key": "alt+9", "command": "go-to-next-error.nextInFiles.error" },
-  { "key": "alt+8", "command": "go-to-next-error.prevInFiles.error" },
+  { "key": "alt+[", "command": "go-to-next-error.prevInFiles.error" },
+  { "key": "alt+]", "command": "go-to-next-error.nextInFiles.error" },
 
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionVisible && !editorReadonly"
+  },
 
   // 查找搜索结果
   {
-    "key": "ctrl+8",
+    "key": "alt+8",
     "command": "search.action.focusPreviousSearchResult",
     "when": "hasSearchResult || inSearchEditor"
   },
   {
-    "key": "ctrl+9",
+    "key": "alt+9",
     "command": "search.action.focusNextSearchResult",
     "when": "hasSearchResult || inSearchEditor"
   },
 
+  // tab 切换
+  { "key": "ctrl+8", "command": "workbench.action.previousEditor" },
+  { "key": "ctrl+9", "command": "workbench.action.nextEditor" },
 
-  /** -------- 终端 -------- */
+
+  /******** 终端 ********/
+  // tab 切换
   {
-    "key": "ctrl+,",
+    "key": "ctrl+8",
     "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "ctrl+.",
+    "key": "ctrl+9",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
+  // 关闭终端
   {
     "key": "ctrl+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
 
+  // 聚焦终端
   {
     "key": "ctrl+;",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
-
 
   /** -------- 扩展 -------- */
   {
