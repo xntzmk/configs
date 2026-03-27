@@ -1,0 +1,22 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.17.4
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Sat Jan 31 20:57:32 2026"
+  rime_version: 1.13.1
+patch:
+  show_notifications: false # 关闭切换中英文的字符提示
+  show_notifications_time: never
+  #schema/icon: icons/your_schema_icon.ico   # user_data_dir/icons/your_schema_icon.ico
+  #schema/ascii_icon: icons/your_schema_ascii_icon.ico   # user_data_dir/icons/your_schema_ascii_icon.ico
+  "style/color_scheme": wechat
+  "app_options/+":
+    code.exe: # 这里是应用可执行文件的名字，带后缀
+      ascii_mode: true
+      vim_mode: true
+    cursor.exe: # 这里是应用可执行文件的名字，带后缀
+      ascii_mode: true
+      vim_mode: true
+    WindowsTerminal.exe: # 这里是应用可执行文件的名字，带后缀
+      ascii_mode: true
+      vim_mode: true
