@@ -1,6 +1,6 @@
 # config-hub
-配置文件合集
 
+配置文件合集
 
 <samp><b>Xntzmk's VS Code Settings</b></samp>
 
